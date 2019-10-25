@@ -1,0 +1,16 @@
+{
+  "name": "2019_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "deploy": "gh-pages - dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://zbekele.github.io/mehaber_balance",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
