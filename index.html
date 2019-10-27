@@ -187,7 +187,7 @@
     </script>
 
     <div class="container">
-      <p>
+      <!-- <p>
         Download your statement:
         <button
           type="button"
@@ -197,15 +197,12 @@
           <span class="glyphicon glyphicon-cloud-download"></span> Download from
           Cloud
         </button>
-      </p>
+      </p> -->
 
       <p>
         Download your statement:
-        <a href="#" class="btn btn-info btn-lg">
-          <span
-            class="glyphicon glyphicon-cloud-download"
-            onclick="makePDF()"
-          ></span>
+        <a href="#" class="btn btn-info btn-md" onclick="makePDF()">
+          <span class="glyphicon glyphicon-cloud-download"></span>
           Download from Cloud
         </a>
       </p>
@@ -216,7 +213,7 @@
         let doc = new jsPDF();
 
         doc.addHTML(document.body, function() {
-          doc.save('zele.pdf');
+          doc.save('መሀበር_Statement.pdf');
         });
       }
     </script>
