@@ -12,8 +12,9 @@
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous"
     />
-    
-    .box1 {
+ 
+ <style>
+ .box1 {
   border: 1px rgb(7, 0, 0) solid;
   padding: 0%;
   margin: 0%;
@@ -26,7 +27,6 @@
   font-size: 18px;
   /* text-transform: uppercase; */
   /* letter-spacing: 1px; */
-
   font-family: 'Changa One', cursive;
   font-size: 48px;
   text-shadow: 4px 4px 4px rgb(134, 133, 133);
@@ -44,8 +44,7 @@
   /* border: 1px green solid; */
   padding: 10px;
 }
-
-    
+ </style>
 
     <title>Mehaber</title>
   </head>
@@ -91,7 +90,6 @@
                   $.each(data.feed.entry, function(key, val) {
                     console.log(val.gsx$members.$t);
                     console.log(val.gsx$jan.$t);
-
                     html += `
                         
                         <div class="container">
