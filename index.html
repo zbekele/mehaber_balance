@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 
     <link rel="stylesheet" href="/styles.css" />
     <link
@@ -176,13 +179,11 @@
     </button>
     <script>
       function makePDF() {
-        var printMe = document.getElementById('customers');
-        var wme = window.open('', '', 'width:200,height:3000');
-        wme.document.write(printMe.outerHTML);
-        wme.document.close();
-        wme.focus();
-        wme.print();
-        wme.close();
+        let doc = new jsPDF();
+
+        doc.addHTML(document.body, function() {
+          doc.save('zele.pdf');
+        });
       }
     </script>
   </body>
