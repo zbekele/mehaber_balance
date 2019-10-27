@@ -211,9 +211,10 @@
     <script>
       function makePDF() {
         let doc = new jsPDF();
+        var d = new Date().toGMTString();
 
         doc.addHTML(document.body, function() {
-          doc.save('መሀበር_Statement.pdf');
+          doc.save('መሀበር_Statement_' + d + '.pdf');
         });
       }
     </script>
