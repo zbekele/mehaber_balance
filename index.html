@@ -12,41 +12,21 @@
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous"
     />
- 
- <style>
- .box1 {
-  border: 1px rgb(7, 0, 0) solid;
-  padding: 0%;
-  margin: 0%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.output1 {
-  text-align: center;
-  font-size: 18px;
-  /* text-transform: uppercase; */
-  /* letter-spacing: 1px; */
-
-  font-family: 'Changa One', cursive;
-  font-size: 48px;
-  text-shadow: 4px 4px 4px rgb(134, 133, 133);
-  /* font-family: 'Bad Script', cursive; */
-  font-family: 'Fredericka the Great', cursive;
-  margin: 0%;
-  /* border: 1px yellow solid; */
-  padding: 10px;
-  background-color: #ffffff;
-  width: 100%;
-  position: fixed;
-}
-.output2 {
-  margin: 9%;
-  /* border: 1px green solid; */
-  padding: 10px;
-}
-
- </style>
+    
+        <style>
+      .header {
+        text-align: center;
+        font-size: 18px;
+        /* text-transform: uppercase; */
+        /* letter-spacing: 1px; */
+        padding: 30px 0;
+        font-family: 'Changa One', cursive;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px rgb(134, 133, 133);
+        /* font-family: 'Bad Script', cursive; */
+        font-family: 'Fredericka the Great', cursive;
+      }
+    </style>
 
     <title>Mehaber</title>
   </head>
@@ -71,130 +51,124 @@
   />
 
   <body onload="myFunction()">
-    <div class="box1">
-      <div class="output1">
-        <h4 class="header">Individual Monthly Contribution</h4>
-      </div>
-      <!-- <button type="button" id="loadData">Load JSON</button> -->
-      <div class="output2">
-        <div id="output"></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="/app.js"></script>
-        <script>
-          function myFunction() {
-            $(function myFunction() {
-              $(function() {
-                var url =
-                  'https://spreadsheets.google.com/feeds/list/1wiq5A0xNJNDkpCtlksCRf6Hs19tWH7HsB1zQ3iQnEc8/od6/public/values?alt=json';
-                $.getJSON(url, function(data) {
-                  console.log(data.feed.entry);
-                  var html = '';
-                  $.each(data.feed.entry, function(key, val) {
-                    console.log(val.gsx$members.$t);
-                    console.log(val.gsx$jan.$t);
-                    html += `
-                        
-                        <div class="container">
-                        
-                        <!--###################START HERE#####################-->
-                
-                        <!-- TABLE -->
-                        
-                        <table class="table table-striped table-bordered table-hover table-sm">
-                        <thead class="table-primary">
-                        <tr>
-                            <th><font color="#3d3dff "><i>${val.gsx$members.$t}</font></th>
-                            <th>Total</th>
-                            <td><font color="#540316"><b>${val.gsx$grandtotal.$t}</td>
-                        </tr>
-                    </thead>
-                
-                        
-                            <thead class="table-primary">
-                                <tr>
-                                    
-                                    <th>Year</th>
-                                    <th>Jan</th>
-                                    <th>Feb</th>
-                                    <th>Mar</th>
-                                    <th>Apr</th>
-                                    <th>May</th>
-                                    <th>Jun</th>
-                                    <th>Jul</th>
-                                    <th>Aug</th>
-                                    <th>Sept</th>
-                                    <th>Oct</th>
-                                    <th>Nov</th>
-                                    <th>Dec</th>   
-                                    <th><font color="#540316"><b>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                
-                                <td>${val.gsx$year.$t}</td>
-                                <td>${val.gsx$jan.$t}</td>
-                                <td>${val.gsx$feb.$t}</td>
-                                <td>${val.gsx$mar.$t}</td>
-                                <td>${val.gsx$apr.$t}</td>
-                                <td>${val.gsx$may.$t}</td>
-                                <td>${val.gsx$jun.$t}</td>
-                                <td>${val.gsx$jul.$t}</td>
-                                <td>${val.gsx$aug.$t}</td>
-                                <td>${val.gsx$sep.$t}</td>
-                                <td>${val.gsx$oct.$t}</td>
-                                <td>${val.gsx$nov.$t}</td>
-                                <td>${val.gsx$dec.$t}</td>
-                                <td><font color="#540316"><b>${val.gsx$total.$t}</td>
-                                </tr>
-                                <tr>
-                                
-                                    <td>${val.gsx$year_2.$t}</td>
-                                    <td>${val.gsx$jan_2.$t}</td>
-                                    <td>${val.gsx$feb_2.$t}</td>
-                                    <td>${val.gsx$mar_2.$t}</td>
-                                    <td>${val.gsx$apr_2.$t}</td>
-                                    <td>${val.gsx$may_2.$t}</td>
-                                    <td>${val.gsx$jun_2.$t}</td>
-                                    <td>${val.gsx$jul_2.$t}</td>
-                                    <td>${val.gsx$aug_2.$t}</td>
-                                    <td>${val.gsx$sep_2.$t}</td>
-                                    <td>${val.gsx$oct_2.$t}</td>
-                                    <td>${val.gsx$nov_2.$t}</td>
-                                    <td>${val.gsx$dec_2.$t}</td>
-                                    <td><font color="#540316"><b>${val.gsx$total_2.$t}</td>
-                                    </tr>
-                                    <tr>
+    <h4 class="header">Individual Monthly Contribution</h4>
+    <!-- <button type="button" id="loadData">Load JSON</button> -->
+    <div id="output"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/app.js"></script>
+    <script>
+      function myFunction() {
+        $(function myFunction() {
+          $(function() {
+            var url =
+              'https://spreadsheets.google.com/feeds/list/1wiq5A0xNJNDkpCtlksCRf6Hs19tWH7HsB1zQ3iQnEc8/od6/public/values?alt=json';
+            $.getJSON(url, function(data) {
+              console.log(data.feed.entry);
+              var html = '';
+              $.each(data.feed.entry, function(key, val) {
+                console.log(val.gsx$members.$t);
+                console.log(val.gsx$jan.$t);
+                html += `
+                  
+                  <div class="container">
+                  
+                  <!--###################START HERE#####################-->
           
-                                <td>${val.gsx$year_3.$t}</td>
-                                <td>${val.gsx$jan_3.$t}</td>
-                                <td>${val.gsx$feb_3.$t}</td>
-                                <td>${val.gsx$mar_3.$t}</td>
-                                <td>${val.gsx$apr_3.$t}</td>
-                                <td>${val.gsx$may_3.$t}</td>
-                                <td>${val.gsx$jun_3.$t}</td>
-                                <td>${val.gsx$jul_3.$t}</td>
-                                <td>${val.gsx$aug_3.$t}</td>
-                                <td>${val.gsx$sep_3.$t}</td>
-                                <td>${val.gsx$oct_3.$t}</td>
-                                <td>${val.gsx$nov_3.$t}</td>
-                                <td>${val.gsx$dec_3.$t}</td>
-                                <td><font color="#540316"><b>${val.gsx$total_3.$t}</td>
-                                </tr>
-                                <tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                        `;
-                  });
-                  $('#output').html(html);
-                });
+                  <!-- TABLE -->
+                  
+                  <table class="table table-striped table-bordered table-hover table-sm">
+                  <thead class="table-primary">
+                  <tr>
+                      <th><font color="#3d3dff "><i>${val.gsx$members.$t}</font></th>
+                      <th>Total</th>
+                      <td><font color="#540316"><b>${val.gsx$grandtotal.$t}</td>
+                  </tr>
+              </thead>
+          
+                  
+                      <thead class="table-primary">
+                          <tr>
+                              
+                              <th>Year</th>
+                              <th>Jan</th>
+                              <th>Feb</th>
+                              <th>Mar</th>
+                              <th>Apr</th>
+                              <th>May</th>
+                              <th>Jun</th>
+                              <th>Jul</th>
+                              <th>Aug</th>
+                              <th>Sept</th>
+                              <th>Oct</th>
+                              <th>Nov</th>
+                              <th>Dec</th>   
+                              <th><font color="#540316"><b>Total</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                          
+                          <td>${val.gsx$year.$t}</td>
+                          <td>${val.gsx$jan.$t}</td>
+                          <td>${val.gsx$feb.$t}</td>
+                          <td>${val.gsx$mar.$t}</td>
+                          <td>${val.gsx$apr.$t}</td>
+                          <td>${val.gsx$may.$t}</td>
+                          <td>${val.gsx$jun.$t}</td>
+                          <td>${val.gsx$jul.$t}</td>
+                          <td>${val.gsx$aug.$t}</td>
+                          <td>${val.gsx$sep.$t}</td>
+                          <td>${val.gsx$oct.$t}</td>
+                          <td>${val.gsx$nov.$t}</td>
+                          <td>${val.gsx$dec.$t}</td>
+                          <td><font color="#540316"><b>${val.gsx$total.$t}</td>
+                          </tr>
+                          <tr>
+                          
+                              <td>${val.gsx$year_2.$t}</td>
+                              <td>${val.gsx$jan_2.$t}</td>
+                              <td>${val.gsx$feb_2.$t}</td>
+                              <td>${val.gsx$mar_2.$t}</td>
+                              <td>${val.gsx$apr_2.$t}</td>
+                              <td>${val.gsx$may_2.$t}</td>
+                              <td>${val.gsx$jun_2.$t}</td>
+                              <td>${val.gsx$jul_2.$t}</td>
+                              <td>${val.gsx$aug_2.$t}</td>
+                              <td>${val.gsx$sep_2.$t}</td>
+                              <td>${val.gsx$oct_2.$t}</td>
+                              <td>${val.gsx$nov_2.$t}</td>
+                              <td>${val.gsx$dec_2.$t}</td>
+                              <td><font color="#540316"><b>${val.gsx$total_2.$t}</td>
+                              </tr>
+                              <tr>
+    
+                          <td>${val.gsx$year_3.$t}</td>
+                          <td>${val.gsx$jan_3.$t}</td>
+                          <td>${val.gsx$feb_3.$t}</td>
+                          <td>${val.gsx$mar_3.$t}</td>
+                          <td>${val.gsx$apr_3.$t}</td>
+                          <td>${val.gsx$may_3.$t}</td>
+                          <td>${val.gsx$jun_3.$t}</td>
+                          <td>${val.gsx$jul_3.$t}</td>
+                          <td>${val.gsx$aug_3.$t}</td>
+                          <td>${val.gsx$sep_3.$t}</td>
+                          <td>${val.gsx$oct_3.$t}</td>
+                          <td>${val.gsx$nov_3.$t}</td>
+                          <td>${val.gsx$dec_3.$t}</td>
+                          <td><font color="#540316"><b>${val.gsx$total_3.$t}</td>
+                          </tr>
+                          <tr>
+                          
+                      </tbody>
+                  </table>
+              </div>
+                  `;
               });
+              $('#output').html(html);
             });
-          }
-        </script>
-      </div>
-    </div>
+          });
+        });
+      }
+    </script>
   </body>
 </html>
