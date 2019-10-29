@@ -210,7 +210,7 @@
 
     <script>
       function makePDF() {
-        let doc = new jsPDF('p', 'mm', [400, 1400]);
+        let doc = new jsPDF('p', 'mm', [1000, 1000]);
         let d = new Date().toGMTString();
 
         doc.addHTML(document.body, function() {
