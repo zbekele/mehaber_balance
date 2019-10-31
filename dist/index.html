@@ -66,6 +66,14 @@
   />
 
   <body onload="myFunction()">
+    <p class="p-3 mb-2 bg-primary text-white">
+      Date/Time: <span id="datetime"></span>
+    </p>
+
+    <script>
+      var dt = new Date();
+      document.getElementById('datetime').innerHTML = dt.toLocaleString();
+    </script>
     <h4 class="header">Individual Monthly Contribution</h4>
 
     <!-- <button type="button" id="loadData">Load JSON</button> -->
