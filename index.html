@@ -25,15 +25,18 @@
     <style>
       .header {
         text-align: center;
-        font-size: 18px;
+
         /* text-transform: uppercase; */
         /* letter-spacing: 1px; */
-        padding: 30px 0;
+        padding: 20px;
         font-family: 'Changa One', cursive;
         font-size: 25px;
         text-shadow: 4px 4px 4px rgb(134, 133, 133);
         /* font-family: 'Bad Script', cursive; */
         font-family: 'Fredericka the Great', cursive;
+      }
+      .time {
+        padding: 25px;
       }
     </style>
 
@@ -66,16 +69,16 @@
   />
 
   <body onload="myFunction()">
-    <div class="container">
+    <div class="col">
       <div class="row">
-        <div class="row">
+        <div class="time" class="col">
           <p class="text-primary">Date/Time: <span id="datetime"></span></p>
         </div>
-        <div class="row">
-          <h4 class="header">Individual Monthly Contribution</h4>
+        <div class="row" class="col">
+          <h1 class="header">Individual Monthly Contribution</h1>
         </div>
       </div>
-      <div class="active-cyan-3 active-cyan-4 mb-4">
+      <div class="active-cyan-3 active-cyan-4 mb-4" class="col">
         <input
           class="form-control"
           type="text"
