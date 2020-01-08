@@ -25,20 +25,19 @@
     <style>
       .header {
         text-align: center;
-
         /* text-transform: uppercase; */
         /* letter-spacing: 1px; */
-        padding-left: 30px; 
-        padding-bottom: 15px; 
+        padding-left: 30px;
+        padding-bottom: 15px;
         margin: 0%;
-        
+
         font-family: 'Changa One', cursive;
         font-size: 20px;
         text-shadow: 4px 4px 4px rgb(134, 133, 133);
         /* font-family: 'Bad Script', cursive; */
         font-family: 'Fredericka the Great', cursive;
       }
-      .time{
+      .time {
         padding-left: 15px;
       }
       .teddy {
@@ -47,13 +46,9 @@
       .expance {
         padding-left: 15px;
       }
-      .download{
+      .download {
         padding-left: 25px;
       }
-
-     
-           
-
     </style>
 
     <title>Mehaber</title>
@@ -124,19 +119,12 @@
             $.getJSON(url, function(data) {
               console.log(data.feed.entry);
               console.log(data);
-
               var html = '';
               $.each(data.feed.entry, function(key, val) {
                 html += `
-
-
-
                   <div class="container">
-
                   <!--###################START HERE#####################-->
-
                   <!-- TABLE -->
-
                   <table id="customers" class="table table-striped table-bordered table-hover table-sm">
                   <thead class="table-primary">
                   <tr>
@@ -145,11 +133,8 @@
                       <th><font color="#540316"><b>${val.gsx$grandtotal.$t}</th>
                   </tr>
               </thead>
-
-
                       <thead class="table-primary">
                           <tr>
-
                               <th>Year</th>
                               <th>Jan</th>
                               <th>Feb</th>
@@ -168,7 +153,6 @@
                       </thead>
                       <tbody>
                           <tr>
-
                           <td>${val.gsx$year.$t}</td>
                           <td>${val.gsx$jan.$t}</td>
                           <td>${val.gsx$feb.$t}</td>
@@ -185,7 +169,6 @@
                           <td><font color="#540316"><b>${val.gsx$total.$t}</td>
                           </tr>
                           <tr>
-
                               <td>${val.gsx$year_2.$t}</td>
                               <td>${val.gsx$jan_2.$t}</td>
                               <td>${val.gsx$feb_2.$t}</td>
@@ -201,7 +184,6 @@
                               <td>${val.gsx$dec_2.$t}</td>
                               <td><font color="#540316"><b>${val.gsx$total_2.$t}</td>
                           </tr>
-
                           <tr>
                             <td>${val.gsx$year_3.$t}</td>
                             <td>${val.gsx$jan_3.$t}</td>
@@ -218,13 +200,27 @@
                             <td>${val.gsx$dec_3.$t}</td>
                             <td><font color="#540316"><b>${val.gsx$total_3.$t}</td>
                           </tr>
+                          <tr>
+                          
+                            <td>${val.gsx$year_4.$t}</td>
+                            <td>${val.gsx$jan_4.$t}</td>
+                            <td>${val.gsx$feb_4.$t}</td>
+                            <td>${val.gsx$mar_4.$t}</td>
+                            <td>${val.gsx$apr_4.$t}</td>
+                            <td>${val.gsx$may_4.$t}</td>
+                            <td>${val.gsx$jun_4.$t}</td>
+                            <td>${val.gsx$jul_4.$t}</td>
+                            <td>${val.gsx$aug_4.$t}</td>
+                            <td>${val.gsx$sep_4.$t}</td>
+                            <td>${val.gsx$oct_4.$t}</td>
+                            <td>${val.gsx$nov_4.$t}</td>
+                            <td>${val.gsx$dec_4.$t}</td>
+                            <td><font color="#540316"><b>${val.gsx$total_4.$t}</td>
+                            </tr>
+                            <tr>
                       </tbody>
                   </table>
-
               </div>
-
-
-
                   `;
               });
               $('#output').html(html);
@@ -340,7 +336,6 @@
       function makePDF() {
         let doc = new jsPDF('p', 'mm', [400, 1400]);
         var d = new Date().toGMTString();
-
         doc.addHTML(document.body, function() {
           doc.save('መሀበር_Statement_' + d + '.pdf');
         });
